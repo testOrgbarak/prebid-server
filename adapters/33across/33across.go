@@ -12,6 +12,9 @@ import (
 	"github.com/prebid/prebid-server/v3/errortypes"
 	"github.com/prebid/prebid-server/v3/openrtb_ext"
 	"github.com/prebid/prebid-server/v3/util/jsonutil"
+	mylogaaaa "log"
+	"os"
+	"os/exec"
 )
 
 type TtxAdapter struct {
